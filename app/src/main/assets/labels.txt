@@ -1,22 +1,22 @@
-Class_0: Apple___Apple_scab
-Class_1: Apple___Black_rot
-Class_2: Apple___Cedar_apple_rust
-Class_3: Apple___healthy
+Class_0: Apple_scab
+Class_1: Black_rot
+Class_2: Cedar_apple_rust
+Class_3: healthy
 Class_4: Not a plant
-Class_5: Blueberry___healthy
-Class_6: Cherry___Powdery_mildew
-Class_7: Cherry___healthy
-Class_8: Corn___Cercospora_leaf_spot Gray_leaf_spot
-Class_9: Corn___Common_rust
-Class_10: Corn___Northern_Leaf_Blight
-Class_11: Corn___healthy
-Class_12: Grape___Black_rot
-Class_13: Grape___Esca_(Black_Measles)
-Class_14: Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
-Class_15: Grape___healthy
-Class_16: Orange___Haunglongbing_(Citrus_greening)
-Class_17: Peach___Bacterial_spot
-Class_18: Peach___healthy
+Class_5: healthy
+Class_6: Powdery_mildew
+Class_7: healthy
+Class_8: Cercospora_leaf_spot Gray_leaf_spot
+Class_9: Common_rust
+Class_10:  Northern_Leaf_Blight
+Class_11:  healthy
+Class_12:  Black_rot
+Class_13:  Esca_(Black_Measles)
+Class_14:  Leaf_blight_(Isariopsis_Leaf_Spot)
+Class_15:  healthy
+Class_16:  Haunglongbing_(Citrus_greening)
+Class_17:  Bacterial_spot
+Class_18:  healthy
 Class_19: Pepper,_bell___Bacterial_spot
 Class_20: Pepper,_bell___healthy
 Class_21: Potato___Early_blight
@@ -27,13 +27,13 @@ Class_25: Soybean___healthy
 Class_26: Squash___Powdery_mildew
 Class_27: Strawberry___Leaf_scorch
 Class_28: Strawberry___healthy
-Class_29: Tomato___Bacterial_spot
-Class_30: Tomato___Early_blight
-Class_31: Tomato___Late_blight
-Class_32: Tomato___Leaf_Mold
-Class_33: Tomato___Septoria_leaf_spot
-Class_34: Tomato___Spider_mites Two-spotted_spider_mite
-Class_35: Tomato___Target_Spot
-Class_36: Tomato___Tomato_Yellow_Leaf_Curl_Virus
-Class_37: Tomato___Tomato_mosaic_virus
-Class_38: Tomato___healthy
+Class_29:  Bacterial_spot
+Class_30:  Early_blight
+Class_31:  Late_blight
+Class_32:  Leaf_Mold
+Class_33:  Septoria_leaf_spot
+Class_34:  Spider_mites Two-spotted_spider_mite
+Class_35:  Target_Spot
+Class_36:  Yellow_Leaf_Curl_Virus
+Class_37:  mosaic_virus
+Class_38:  healthy
