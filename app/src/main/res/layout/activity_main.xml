@@ -2,55 +2,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
-    android:padding="16dp">
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:backgroundTint="#6200EA"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:background="#000"
-        android:contentDescription="Selected image"
-        />
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/btnBack"
+        android:background="#E0E0E0"
+        android:scaleType="centerCrop"
+        android:contentDescription="Selected image" />
 
-    <!-- Button to pick image -->
     <LinearLayout
         android:id="@+id/inLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView"
-        >
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/selectBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pick Image"
-            android:layout_gravity="center"/>
+            android:backgroundTint="#03DAC5"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:layout_marginEnd="8dp"/>
+
         <Button
             android:id="@+id/predictBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="predict Image"
-            android:layout_gravity="center"/>
+            android:text="Predict Image"
+            android:backgroundTint="#03DAC5"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:elevation="4dp"/>
     </LinearLayout>
 
-    <!-- ImageView to display the selected image -->
-
-
-    <!-- TextView to display the prediction result -->
     <TextView
         android:id="@+id/resView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Prediction"
-        android:textSize="20dp"
-        android:layout_below="@+id/inLayout"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="center"/>
-
+        android:textSize="20sp"
+        android:textColor="#6200EA"
+        android:layout_below="@id/inLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 </RelativeLayout>
-
-

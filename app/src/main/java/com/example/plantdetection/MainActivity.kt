@@ -20,6 +20,8 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.util.Log
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.plantdetection.ml.LiteModel
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.common.ops.NormalizeOp
@@ -46,7 +48,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
+
+       val backBtn = findViewById<Button>(R.id.btnBack)
+
+        // main activity intent ->> Welcome
+        backBtn.setOnClickListener {
+            Log.d("Main Activity", "backBtn button clicked")
+            val intent = Intent(this, WelcomePage::class.java)
+            startActivity(intent)
+        }
 
 
         selectBtn = findViewById(R.id.selectBtn)

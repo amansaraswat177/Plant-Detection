@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.PlantDetection" parent="Base.Theme.PlantDetection" />
+    <style name="Theme.App.SplashScreen" parent = "Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_gray</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.PlantDetection</item>
+    </style>
 </resources>
