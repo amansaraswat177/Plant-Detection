@@ -22,6 +22,7 @@ class ecompage : AppCompatActivity() {
             Log.d("Ecom Page", "Ecom Back button clicked")
             val intent = Intent(this, WelcomePage::class.java)
             startActivity(intent)
+            finish()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

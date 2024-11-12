@@ -1,49 +1,32 @@
 package com.example.plantdetection
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.graphics.Bitmap
-import android.graphics.ImageDecoder
-import android.os.Build
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
-
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.util.Log
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.plantdetection.ml.LiteModel
 import org.tensorflow.lite.DataType
+//these two unused are needed
 import org.tensorflow.lite.support.common.ops.NormalizeOp
+import org.tensorflow.lite.support.image.ops.TransformToGrayscaleOp
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
-import org.tensorflow.lite.support.image.ops.TransformToGrayscaleOp
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
-import java.nio.MappedByteBuffer
-import java.nio.channels.FileChannel
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var selectBtn: Button
-    lateinit var predBtn: Button
-    lateinit var resView: TextView
-    lateinit var imageView: ImageView
-    lateinit var bitmap: Bitmap
+    private lateinit var selectBtn: Button
+    private lateinit var predBtn: Button
+    private lateinit var resView: TextView
+    private lateinit var imageView: ImageView
+    private lateinit var bitmap: Bitmap
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +41,15 @@ class MainActivity : AppCompatActivity() {
             Log.d("Main Activity", "backBtn button clicked")
             val intent = Intent(this, WelcomePage::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        val solutionButton = findViewById<Button>(R.id.solBtn)
+        solutionButton.setOnClickListener {
+            // Create an Intent to navigate to SolutionActivity
+            val intent = Intent(this, PlantSolution::class.java)
+            startActivity(intent)
+            finish()
         }
 
 
@@ -66,10 +58,10 @@ class MainActivity : AppCompatActivity() {
         resView = findViewById(R.id.resView)
         imageView = findViewById(R.id.imageView)
 
-        var labels = application.assets.open("labels.txt").bufferedReader().readLines()
+        val labels = application.assets.open("labels.txt").bufferedReader().readLines()
 
         // image processor
-        var imageProcessor = ImageProcessor.Builder()
+        val imageProcessor = ImageProcessor.Builder()
 //            .add(NormalizeOp(0.0f,255.0f))
 //            .add(TransformToGrayscaleOp())
             .add(ResizeOp(200,200,ResizeOp.ResizeMethod.BILINEAR))
@@ -77,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
 
         selectBtn.setOnClickListener {
-            var intent = Intent()
+            val intent = Intent()
             intent.setAction(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
             startActivityForResult(intent, 100)

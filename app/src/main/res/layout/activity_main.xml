@@ -1,72 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#F5F5F5">
+    android:background="#F5F5F5"
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:backgroundTint="#6200EA"
-        android:textColor="#FFFFFF"
-        android:elevation="4dp"
-        android:padding="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/btnBack"
-        android:background="#E0E0E0"
-        android:scaleType="centerCrop"
-        android:contentDescription="Selected image" />
-
-    <LinearLayout
-        android:id="@+id/inLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/imageView"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/selectBtn"
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick Image"
+            android:text="Back"
+            android:backgroundTint="#6200EA"
+            android:textColor="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/btnBack"
+            android:background="#E0E0E0"
+            android:scaleType="centerCrop"
+            android:contentDescription="Selected image" />
+
+        <LinearLayout
+            android:id="@+id/inLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageView"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/selectBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick Image"
+                android:backgroundTint="#03DAC5"
+                android:textColor="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="4dp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/predictBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Predict Image"
+                android:backgroundTint="#03DAC5"
+                android:textColor="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/resView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prediction"
+            android:textSize="20sp"
+            android:textColor="#6200EA"
+            android:layout_below="@id/inLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Solution Button positioned below resView -->
+        <Button
+            android:id="@+id/solBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Solution"
             android:backgroundTint="#03DAC5"
             android:textColor="#FFFFFF"
             android:padding="8dp"
             android:elevation="4dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_below="@id/resView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
 
-        <Button
-            android:id="@+id/predictBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Predict Image"
-            android:backgroundTint="#03DAC5"
-            android:textColor="#FFFFFF"
-            android:padding="8dp"
-            android:elevation="4dp"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/resView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prediction"
-        android:textSize="20sp"
-        android:textColor="#6200EA"
-        android:layout_below="@id/inLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

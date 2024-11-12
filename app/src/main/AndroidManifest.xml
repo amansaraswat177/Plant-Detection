@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PlantDetection"
         tools:targetApi="31">
         <activity
+            android:name=".PlantSolution"
+            android:exported="false" />
+        <activity
             android:name=".ecompage"
             android:exported="false" />
         <activity
