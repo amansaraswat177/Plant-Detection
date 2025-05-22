@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/img"
     tools:context=".ecompage">
 
     <TextView
         android:id="@+id/ecomTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is Ecom Page"
+        android:text="About This App"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"
@@ -24,16 +25,16 @@
         android:id="@+id/comingSoonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coming Soon..."
-        android:textSize="32sp"
+        android:text="This app is designed to help farmers and users easily detect plant diseases by analyzing leaf images. Using advanced deep learning techniques like Convolutional Neural Networks (CNN), it quickly identifies diseases in crops such as tomatoes, potatoes, raspberries, soybeans, and apples. The app supports real-time detection through color, segmented, and grayscale images, offering fast and reliable results to help users manage crop health and improve productivity."
+        android:textSize="19sp"
         android:textStyle="bold"
-        android:textColor="#FF5722"
         app:layout_constraintTop_toBottomOf="@id/ecomTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/ecombackbtn"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"/>
+
 
     <Button
         android:id="@+id/ecombackbtn"

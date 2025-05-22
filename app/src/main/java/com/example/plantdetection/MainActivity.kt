@@ -19,7 +19,6 @@ import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var selectBtn: Button
@@ -28,13 +27,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var bitmap: Bitmap
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-       val backBtn = findViewById<Button>(R.id.btnBack)
+        val backBtn = findViewById<Button>(R.id.btnBack)
 
         // main activity intent ->> Welcome
         backBtn.setOnClickListener {
@@ -46,12 +43,11 @@ class MainActivity : AppCompatActivity() {
 
         val solutionButton = findViewById<Button>(R.id.solBtn)
         solutionButton.setOnClickListener {
-            // Create an Intent to navigate to SolutionActivity
+            // Create an Intent to navigate to PlantSolution Activity
             val intent = Intent(this, PlantSolution::class.java)
             startActivity(intent)
-            finish()
+            // Removed finish() to keep MainActivity in the back stack
         }
-
 
         selectBtn = findViewById(R.id.selectBtn)
         predBtn = findViewById(R.id.predictBtn)
@@ -67,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             .add(ResizeOp(200,200,ResizeOp.ResizeMethod.BILINEAR))
             .build()
 
-
         selectBtn.setOnClickListener {
             val intent = Intent()
             intent.setAction(Intent.ACTION_GET_CONTENT)
@@ -76,50 +71,46 @@ class MainActivity : AppCompatActivity() {
         }
 
         predBtn.setOnClickListener {
+            // Check if bitmap is initialized before using it
+            if (::bitmap.isInitialized) {
+                var tensorImage = TensorImage(DataType.FLOAT32)
+                tensorImage.load(bitmap)
 
-            var tensorImage = TensorImage(DataType.FLOAT32)
-            tensorImage.load(bitmap)
+                tensorImage = imageProcessor.process(tensorImage)
 
+                val model = LiteModel.newInstance(this)
 
-            tensorImage = imageProcessor.process(tensorImage)
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 200, 200, 3), DataType.FLOAT32)
+                inputFeature0.loadBuffer(tensorImage.buffer)
 
-            val model = LiteModel.newInstance(this)
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
 
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 200, 200, 3), DataType.FLOAT32)
-            inputFeature0.loadBuffer(tensorImage.buffer)
+                var maxIdx = 0
 
-
-            val outputs = model.process(inputFeature0)
-            val outputFeature0 = outputs.outputFeature0AsTensorBuffer.floatArray
-
-            var maxIdx = 0
-
-            outputFeature0.forEachIndexed{ index, fl->
-                if(outputFeature0[maxIdx] < fl){
-                    maxIdx = index
+                outputFeature0.forEachIndexed { index, fl ->
+                    if (outputFeature0[maxIdx] < fl) {
+                        maxIdx = index
+                    }
                 }
+
+                resView.setText(labels[maxIdx])
+                model.close()
+            } else {
+                resView.setText("Please select an image first")
             }
-
-            resView.setText(labels[maxIdx])
-
-
-            model.close()
         }
-
     }
-
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == 100){
-            var uri = data?.data;
-            bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver,uri)
-            imageView.setImageBitmap(bitmap)
-
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            val uri = data?.data
+            uri?.let {
+                bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, it)
+                imageView.setImageBitmap(bitmap)
+            }
         }
-
     }
-
 }

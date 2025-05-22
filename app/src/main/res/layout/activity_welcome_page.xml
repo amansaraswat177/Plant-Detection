@@ -6,37 +6,128 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3F7FA"
     tools:context=".WelcomePage">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#FFFFFF"
+        android:elevation="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+
+    <ImageButton
+        android:id="@+id/prev_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_media_previous"
+        android:contentDescription="Previous"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="#6EC1E4"
+        app:layout_constraintTop_toTopOf="@id/viewPager"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp" />
+
+    <ImageButton
+        android:id="@+id/next_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_media_next"
+        android:contentDescription="Next"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="#6EC1E4"
+        app:layout_constraintTop_toTopOf="@id/viewPager"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="24dp" />
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Welcome to Petal Picks"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="Welcome to Petal Picks!"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/viewPager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/thankYouText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let’s make your garden bloom!"
+        android:textSize="16sp"
+        android:textColor="#4A4A4A"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose your next step:"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/thankYouText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <Button
         android:id="@+id/eom_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="EOM Button"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#000000"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="🌱About this app"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/dbtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/dbtn"
+        app:layout_constraintTop_toBottomOf="@+id/dbtn"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/dbtn"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="DBTN Button"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/eom_btn"
+        android:backgroundTint="#FF5722"
+        android:elevation="4dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="🔍 Diagnose Plant Disease"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/instructionText" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

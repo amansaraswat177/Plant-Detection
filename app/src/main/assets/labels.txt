@@ -8,8 +8,8 @@ Class_6: Powdery_mildew
 Class_7: healthy
 Class_8: Cercospora_leaf_spot Gray_leaf_spot
 Class_9: Common_rust
-Class_10:  Northern_Leaf_Blight
-Class_11:  healthy
+Class_10: Northern_Leaf_Blight
+Class_11: healthy
 Class_12:  Black_rot
 Class_13:  Esca_(Black_Measles)
 Class_14:  Leaf_blight_(Isariopsis_Leaf_Spot)
