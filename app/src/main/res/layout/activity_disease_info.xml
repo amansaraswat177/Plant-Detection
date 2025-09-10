@@ -2,44 +2,234 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="#f8f9fa"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
 
-        <TextView
-            android:id="@+id/symptomsText"
-            android:layout_width="wrap_content"
+        <!-- Header Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Symptoms"
-            android:textSize="18sp"
-            android:layout_marginBottom="10dp"/>
+            android:background="#ffffff"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="4dp">
 
-        <TextView
-            android:id="@+id/treatmentText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Treatment"
-            android:textSize="18sp"
-            android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medical Information"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1a1a1a"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:id="@+id/preventiveText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preventive Measures"
-            android:textSize="18sp"
-            android:layout_marginBottom="10dp"/>
+            <View
+                android:layout_width="60dp"
+                android:layout_height="4dp"
+                android:background="#4a90e2"
+                android:layout_gravity="center"/>
 
-        <TextView
-            android:id="@+id/riskText"
-            android:layout_width="wrap_content"
+        </LinearLayout>
+
+        <!-- Symptoms Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Risk Factors"
-            android:textSize="18sp"
-            android:layout_marginBottom="10dp"/>
+            android:background="#ffffff"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="#e74c3c"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/symptomsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Symptoms"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2c3e50"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monitor and track various symptoms to understand your health condition better."
+                android:textSize="16sp"
+                android:textColor="#7f8c8d"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Treatment Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="#27ae60"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/treatmentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Treatment"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2c3e50"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comprehensive treatment options and medical care recommendations for optimal health."
+                android:textSize="16sp"
+                android:textColor="#7f8c8d"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Preventive Measures Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="#f39c12"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/preventiveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preventive Measures"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2c3e50"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Essential preventive steps and lifestyle changes to maintain good health and prevent illness."
+                android:textSize="16sp"
+                android:textColor="#7f8c8d"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Risk Factors Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:elevation="3dp"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginHorizontal="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="#9b59b6"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/riskText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Risk Factors"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#2c3e50"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Identify and understand potential risk factors that may affect your health and wellbeing."
+                android:textSize="16sp"
+                android:textColor="#7f8c8d"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Always consult with healthcare professionals for medical advice"
+            android:textSize="14sp"
+            android:textColor="#95a5a6"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:layout_marginTop="16dp"/>
+
     </LinearLayout>
 </ScrollView>

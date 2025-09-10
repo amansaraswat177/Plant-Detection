@@ -7,7 +7,6 @@ import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,7 +25,7 @@ class WelcomePage : AppCompatActivity() {
         val nextBtn = findViewById<ImageButton>(R.id.next_btn)
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
 
-        val images = listOf(R.drawable.image1, R.drawable.image2, R.drawable.image3) // Your images
+        val images = listOf(R.drawable.photo2, R.drawable.photo1, R.drawable.photo3) // Your images
 
         val adapter = ImageAdapter(images)
         viewPager.adapter = adapter

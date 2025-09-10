@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="WelcomeTextStyle">
+        <item name="android:textSize">56sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:shadowColor">@color/shadow_light</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">6</item>
+    </style>
+
+    <style name="QuoteTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/roboto_light_italic</item>
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+</resources>
